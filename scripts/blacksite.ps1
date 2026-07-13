@@ -2,7 +2,7 @@ Clear-Host
 
 Write-Host ""
 Write-Host "==============================================" -ForegroundColor Cyan
-Write-Host "            BLACKSITE OPS v0.3" -ForegroundColor Green
+Write-Host "            BLACKSITE OPS v1.0" -ForegroundColor Green
 Write-Host "==============================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -32,12 +32,88 @@ else {
 }
 
 $Session = "OPS-{0:D4}" -f ($Count + 1)
-Write-Host "Date: $Date"
+Write-Host "Session : $Session" -ForegroundColor Yellow
+Write-Host "Date    : $Date"
 Write-Host ""
 
 
-$Hours = Read-Host "Hours Studied"
-$Technology = Read-Host "Technologies"
+do {
+    $Hours = Read-Host "Hours Studied"
+} until ($Hours -match '^\d+(\.\d+)?$')
+# Load Technologies
+$TechnologyList = Get-Content ".\config\technologies.json" | ConvertFrom-Json
+
+Write-Host ""
+Write-Host "Available Technologies" -ForegroundColor Cyan
+Write-Host "----------------------"
+
+for ($i = 0; $i -lt $TechnologyList.Count; $i++) {
+    Write-Host "$($i + 1). $($TechnologyList[$i])"
+}
+
+Write-Host ""
+$Selection = Read-Host "Select technologies (Example: 1,3,8 or A to Add)"
+
+if ($Selection.ToUpper() -eq "A") {
+
+    $NewTech = Read-Host "Enter new technology"
+
+    if ($TechnologyList -contains $NewTech) {
+
+        Write-Host ""
+        Write-Host "'$NewTech' already exists." -ForegroundColor Yellow
+
+    }
+    else {
+
+        $TechnologyList += $NewTech
+
+        $TechnologyList |
+            ConvertTo-Json |
+            Set-Content ".\config\technologies.json"
+
+        Write-Host ""
+        Write-Host "'$NewTech' added successfully!" -ForegroundColor Green
+
+    }
+
+    Write-Host ""
+
+    # Reload list
+    $TechnologyList = Get-Content ".\config\technologies.json" | ConvertFrom-Json
+
+    Write-Host "Available Technologies" -ForegroundColor Cyan
+    Write-Host "----------------------"
+
+    for ($i = 0; $i -lt $TechnologyList.Count; $i++) {
+        Write-Host "$($i + 1). $($TechnologyList[$i])"
+    }
+
+    Write-Host ""
+
+    $Selection = Read-Host "Select technologies"
+
+}
+
+$Technology = @()
+
+foreach ($Item in $Selection.Split(",")) {
+
+    $Index = [int]$Item.Trim() - 1
+
+    if ($Index -ge 0 -and $Index -lt $TechnologyList.Count) {
+
+        $Technology += $TechnologyList[$Index]
+
+    }
+
+}
+
+$Technology = $Technology -join ", "
+Write-Host ""
+Write-Host "Selected Technologies:" -ForegroundColor Green
+Write-Host $Technology
+Write-Host ""
 $Tasks = Read-Host "Session Notes"
 $Problems = Read-Host "Difficulties"
 $Tomorrow = Read-Host "Next Goals"
@@ -49,7 +125,7 @@ Write-Host "---------------------------------------------"
 
 Write-Host "Session      : $Session"
 Write-Host "Hours        : $Hours"
-Write-Host "Technology    : $Technology"
+Write-Host "Topics Covered : $Technology"
 Write-Host "Session Notes : $Tasks"
 Write-Host "Difficulties  : $Problems"
 Write-Host "Next Goals    : $Tomorrow"
@@ -112,7 +188,7 @@ $Session
 ## Hours
 $Hours
 
-## Technologies
+## Topics Covered
 $Technology
 
 ## Session Notes
@@ -196,7 +272,7 @@ if ($Push.ToUpper() -eq "Y") {
     Write-Host "Adding files..." -ForegroundColor Cyan
     git add .
 
-    $CommitMessage = "Engineering Log - $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+    $CommitMessage = "$Session | $Hours hrs | $Technology"
 
     Write-Host "Creating commit..." -ForegroundColor Cyan
     git commit -m $CommitMessage
@@ -204,10 +280,16 @@ if ($Push.ToUpper() -eq "Y") {
     Write-Host "Pushing to GitHub..." -ForegroundColor Cyan
     git push
 
-    Write-Host ""
-    Write-Host "==========================================" -ForegroundColor Green
-    Write-Host " SUCCESS! Engineering Log Published" -ForegroundColor Green
-    Write-Host "==========================================" -ForegroundColor Green
+   Write-Host ""
+Write-Host "==========================================" -ForegroundColor Green
+Write-Host "        SESSION COMPLETE" -ForegroundColor Green
+Write-Host "==========================================" -ForegroundColor Green
+Write-Host ""
+Write-Host "Session : $Session"
+Write-Host "Hours   : $Hours"
+Write-Host "Topics  : $Technology"
+Write-Host "Log     : $LogFile"
+Write-Host ""
 }
 else {
 

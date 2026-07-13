@@ -1,35 +1,19 @@
 [
-    {
-        "Name": "Git"
-    },
-    {
-        "Name": "GitHub"
-    },
-    {
-        "Name": "PowerShell"
-    },
-    {
-        "Name": "Windows Server"
-    },
-    {
-        "Name": "Active Directory"
-    },
-    {
-        "Name": "DNS"
-    },
-    {
-        "Name": "DHCP"
-    },
-    {
-        "Name": "VirtualBox"
-    },
-    {
-        "Name": "VMware"
-    },
-    {
-        "Name": "Linux"
-    },
-    {
-        "Name": "NGT Academy"
-    }
+  "Git",
+  "GitHub",
+  "PowerShell",
+  "Windows Server",
+  "Active Directory",
+  "DNS",
+  "DHCP",
+  "Azure",
+  "AWS",
+  "Terraform",
+  "Docker",
+  "Kubernetes",
+  "Linux",
+  "Networking",
+  "Security+",
+  "NGT Academy",
+  "Virtualization"
 ]
