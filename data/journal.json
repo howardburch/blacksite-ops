@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "Problems": "Learning Git",
+    "Tasks": "Built blacksite-ops ",
+    "Hours": "6",
+    "Technologies": "Git, Github, Powershell",
+    "Tomorrow": "Build JSON logging",
+    "Mission": "000",
+    "Date": "2026-07-13"
+  },
+  {
+    "Problems": "learning Git",
+    "Tasks": "researched and built blacksite-ops",
+    "Hours": "6",
+    "Technologies": "Git, Github, Powershell",
+    "Tomorrow": "Build JSON logging",
+    "Mission": "000",
+    "Date": "2026-07-13"
+  },
+  {
+    "Problems": "learning Git",
+    "Tasks": "researched and built blacksite-ops",
+    "Hours": "6",
+    "Technologies": "Git, Github, Powershell",
+    "Tomorrow": "Build JSON logging",
+    "Mission": "000",
+    "Date": "2026-07-13"
+  },
+  {
+    "Mission": "000",
+    "Hours": "6",
+    "Problems": "Learning git",
+    "Technologies": "Git, Github, Powershell 7",
+    "Tomorrow": "continue testing v.02 and add additional features tbd based on intergration constraints",
+    "Date": "2026-07-13",
+    "Tasks": "Built out coding for blacksite-ops engineer journal tracker program"
+  }
+]
