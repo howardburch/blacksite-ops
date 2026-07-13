@@ -2,33 +2,57 @@ Clear-Host
 
 Write-Host ""
 Write-Host "==============================================" -ForegroundColor Cyan
-Write-Host "            BLACKSITE OPS v1.0" -ForegroundColor Green
+Write-Host "            BLACKSITE OPS v0.3" -ForegroundColor Green
 Write-Host "==============================================" -ForegroundColor Cyan
 Write-Host ""
 
 $Date = Get-Date -Format "MMMM dd, yyyy"
+# -----------------------------
+# Generate Session ID
+# -----------------------------
 
+$JournalPath = ".\data\journal.json"
+
+if (Test-Path $JournalPath) {
+
+    $Entries = Get-Content $JournalPath -Raw | ConvertFrom-Json
+
+    if ($Entries -eq $null) {
+        $Count = 0
+    }
+    else {
+        $Count = @($Entries).Count
+    }
+
+}
+else {
+
+    $Count = 0
+
+}
+
+$Session = "OPS-{0:D4}" -f ($Count + 1)
 Write-Host "Date: $Date"
 Write-Host ""
 
-$Mission = Read-Host "Mission"
+
 $Hours = Read-Host "Hours Studied"
 $Technology = Read-Host "Technologies"
-$Tasks = Read-Host "Tasks Completed"
-$Problems = Read-Host "Problems Encountered"
-$Tomorrow = Read-Host "Tomorrow's Goal"
+$Tasks = Read-Host "Session Notes"
+$Problems = Read-Host "Difficulties"
+$Tomorrow = Read-Host "Next Goals"
 
 Write-Host ""
 Write-Host "---------------------------------------------"
 Write-Host "Today's Entry"
 Write-Host "---------------------------------------------"
 
-Write-Host "Mission      : $Mission"
+Write-Host "Session      : $Session"
 Write-Host "Hours        : $Hours"
-Write-Host "Technology   : $Technology"
-Write-Host "Tasks        : $Tasks"
-Write-Host "Problems     : $Problems"
-Write-Host "Tomorrow     : $Tomorrow"
+Write-Host "Technology    : $Technology"
+Write-Host "Session Notes : $Tasks"
+Write-Host "Difficulties  : $Problems"
+Write-Host "Next Goals    : $Tomorrow"
 
 Write-Host ""
 # -----------------------------
@@ -36,13 +60,13 @@ Write-Host ""
 # -----------------------------
 
 $Entry = @{
+    Session = $Session
     Date = Get-Date -Format "yyyy-MM-dd"
-    Mission = $Mission
     Hours = $Hours
     Technologies = $Technology
-    Tasks = $Tasks
-    Problems = $Problems
-    Tomorrow = $Tomorrow
+    SessionNotes = $Tasks
+    Difficulties = $Problems
+    NextGoals = $Tomorrow
 }
 
 $JsonPath = ".\data\journal.json"
@@ -82,8 +106,8 @@ $LogFile = "$LogFolder\$(Get-Date -Format 'yyyy-MM-dd').md"
 
 **Date:** $Date
 
-## Mission
-$Mission
+## Session
+$Session
 
 ## Hours
 $Hours
@@ -91,15 +115,74 @@ $Hours
 ## Technologies
 $Technology
 
-## Work Completed
+## Session Notes
 $Tasks
 
-## Problems
+## Difficulties
 $Problems
 
-## Tomorrow
+## Next Goals
 $Tomorrow
 "@ | Set-Content $LogFile
+# -----------------------------
+# Session Statistics
+# -----------------------------
+
+$Entries = Get-Content ".\data\journal.json" -Raw | ConvertFrom-Json
+
+$Entries = @($Entries)
+
+$Today = Get-Date
+$CurrentWeek = [System.Globalization.CultureInfo]::CurrentCulture.Calendar.GetWeekOfYear(
+    $Today,
+    [System.Globalization.CalendarWeekRule]::FirstFourDayWeek,
+    [DayOfWeek]::Monday
+)
+
+$CurrentMonth = $Today.Month
+$CurrentYear = $Today.Year
+
+$LifetimeHours = 0
+$WeekHours = 0
+$MonthHours = 0
+
+foreach ($Entry in $Entries) {
+
+    $Hours = [double]$Entry.Hours
+    $EntryDate = [datetime]$Entry.Date
+
+    $LifetimeHours += $Hours
+
+    $EntryWeek = [System.Globalization.CultureInfo]::CurrentCulture.Calendar.GetWeekOfYear(
+        $EntryDate,
+        [System.Globalization.CalendarWeekRule]::FirstFourDayWeek,
+        [DayOfWeek]::Monday
+    )
+
+    if ($EntryWeek -eq $CurrentWeek -and $EntryDate.Year -eq $CurrentYear) {
+        $WeekHours += $Hours
+    }
+
+    if ($EntryDate.Month -eq $CurrentMonth -and $EntryDate.Year -eq $CurrentYear) {
+        $MonthHours += $Hours
+    }
+
+}
+
+Write-Host ""
+Write-Host "==================================================" -ForegroundColor Cyan
+Write-Host "             BLACKSITE OPS STATS" -ForegroundColor Green
+Write-Host "==================================================" -ForegroundColor Cyan
+
+Write-Host ("Session           : {0}" -f $Session)
+Write-Host ("Today's Hours     : {0}" -f $Hours)
+Write-Host ("Week Total        : {0}" -f $WeekHours)
+Write-Host ("Month Total       : {0}" -f $MonthHours)
+Write-Host ("Lifetime Hours    : {0}" -f $LifetimeHours)
+Write-Host ("Sessions Logged   : {0}" -f $Entries.Count)
+
+Write-Host "=================================================="
+Write-Host ""
 # -----------------------------
 # Git Automation
 # -----------------------------
