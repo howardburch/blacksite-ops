@@ -1,4 +1,7 @@
 Clear-Host
+# Always run relative to the script location
+$Root = Split-Path -Parent $PSScriptRoot
+Set-Location $Root
 
 Write-Host ""
 Write-Host "==============================================" -ForegroundColor Cyan
