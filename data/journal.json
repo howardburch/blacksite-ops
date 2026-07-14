@@ -1,9 +1,20 @@
-{
-  "Hours": "6",
-  "NextGoals": "Continue developing v1.0 features - global launcher Powershell and Command Prompt, Weekly/Monthly Report generation.",
-  "Session": "OPS-0001",
-  "Date": "2026-07-13",
-  "Difficulties": "Coding in VScode and Powershell, issues related to CLI launcher and scripting.",
-  "Technologies": "Git, GitHub, PowerShell, Visual Studio Code",
-  "SessionNotes": "Built a functioning CLI application. That can launch from powershell, logs engineering sessions, maintains persistent data, and generates reports / statistics. v1.0 released it and added to github."
-}
+[
+  {
+    "Hours": "6",
+    "NextGoals": "Continue developing v1.0 features - global launcher Powershell and Command Prompt, Weekly/Monthly Report generation.",
+    "Session": "OPS-0001",
+    "Date": "2026-07-13",
+    "Difficulties": "Coding in VScode and Powershell, issues related to CLI launcher and scripting.",
+    "Technologies": "Git, GitHub, PowerShell, Visual Studio Code",
+    "SessionNotes": "Built a functioning CLI application. That can launch from powershell, logs engineering sessions, maintains persistent data, and generates reports / statistics. v1.0 released it and added to github."
+  },
+  {
+    "SessionNotes": "Studied basic commands for switch and routers for Cisco Packet Tracer for Virtual Labs for NGT Academy",
+    "Technologies": "Cisco, NGT Academy, Networking",
+    "Session": "OPS-0002",
+    "Difficulties": "Cisco Packet Tracer Lessons felt dated from NGT",
+    "Hours": "4",
+    "Date": "2026-07-14",
+    "NextGoals": "Focus more on actual Cisco training from Cisco for this platform"
+  }
+]
