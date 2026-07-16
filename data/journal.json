@@ -25,5 +25,14 @@
     "Hours": "1",
     "Session": "OPS-0003",
     "Technologies": "Git, GitHub, PowerShell, Visual Studio Code"
+  },
+  {
+    "Technologies": "NGT Academy",
+    "SessionNotes": "Studied, TCP UDP,Portwording, DNS, Core Protocols",
+    "NextGoals": "Networking Models",
+    "Session": "OPS-0004",
+    "Hours": "2",
+    "Date": "2026-07-15",
+    "Difficulties": "None"
   }
 ]
