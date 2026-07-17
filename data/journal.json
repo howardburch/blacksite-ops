@@ -43,5 +43,14 @@
     "Hours": "2.25",
     "Date": "2026-07-16",
     "Difficulties": "HDD Pricing is outrageous."
+  },
+  {
+    "Technologies": "NGT Academy",
+    "Hours": "2",
+    "Difficulties": "None",
+    "SessionNotes": "Studies Core Protocols, TCP, UDP, ",
+    "NextGoals": "IP & Subdomains",
+    "Session": "OPS-0006",
+    "Date": "2026-07-17"
   }
 ]
