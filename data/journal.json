@@ -52,5 +52,14 @@
     "NextGoals": "IP & Subdomains",
     "Session": "OPS-0006",
     "Date": "2026-07-17"
+  },
+  {
+    "Date": "2026-07-18",
+    "Session": "OPS-0007",
+    "Technologies": "Linux, Networking, PowerShell, Proxmox",
+    "NextGoals": "Finish networking rack and equipment installation",
+    "Difficulties": "Install of OS and BIOS not exectuing install.",
+    "SessionNotes": "Set up mini pc with Proxmox, for Project Atlas, troubleshot networking issues related to dedicated ip adressing, troubleshot BIOS for OS install boot not reading on boot order.",
+    "Hours": "4"
   }
 ]
