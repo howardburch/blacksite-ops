@@ -61,5 +61,14 @@
     "Difficulties": "Install of OS and BIOS not exectuing install.",
     "SessionNotes": "Set up mini pc with Proxmox, for Project Atlas, troubleshot networking issues related to dedicated ip adressing, troubleshot BIOS for OS install boot not reading on boot order.",
     "Hours": "4"
+  },
+  {
+    "SessionNotes": "Installed and configured NGINX Proxy. Learned reverse proxy fundamentals and how NPM routes requests to internal services. Evaluated reverse proxy options and selected NGINX as longterm solution. Learned difference of recursive DNS vs Local DNS rewrites. Installed and configured Adguard Home for network wide DNS and ad blocking. Configured Quad9 DNS over HTTPs as unpstream resolver. Created reverse proxy hosts for services. Sucessfully validated the complete request path : Client> AdGuard> DNS Rewrite> NGINX> Docker Service. Investigated Windows DNS behavior and identified IPV6 DNS precedence over manual configured IPV4. Confirmed architecture by testing Jellyfin through internal hostname. Intergated Jellyfin and Navidrome among other services into Homarr dashboard. Established the inital internal service architecture for Project Atlas.",
+    "Difficulties": "IPV6 DNS took precedence over local DNS rewrites, Windows continued querying the ISP's IPv6 DNS instead of AdGuard. Determined issues was client side DNS, Validated functionality by temp disabling IPv6 during testing before restoring it.",
+    "Session": "OPS-0008",
+    "Date": "2026-07-19",
+    "NextGoals": "Implement operations tasks: automatic health monitoring, back up strategy, proxmox snapshots, disk usuage alerts, SMART mointoring, Automatic container updates (carfeully controlled) Then move on to Security with WireGuard VPN, Fail2Ban (if applicable) Internal only administration, HTTPS where appropriate and Proper documentation.",
+    "Technologies": "DNS, Docker, Networking, Proxmox, Docker Compose, Adguard Home, NGINX Proxy Manager, Hommar, Jellyfin, Navidrome, Glances, Reverse Proxy, DNS Rewriting, HTTP Networking, Home Lab Architecture",
+    "Hours": "6"
   }
 ]

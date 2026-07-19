@@ -19,5 +19,16 @@
   "Visual Studio Code",
   "Cisco",
   "Enterprise Equipment Research",
-  "Proxmox"
+  "Proxmox",
+  "Docker Compose",
+  "Adguard Home",
+  "NGINX Proxy Manager",
+  "Hommar",
+  "Jellyfin",
+  "Navidrome",
+  "Glances",
+  "Reverse Proxy",
+  "DNS Rewriting",
+  "HTTP Networking",
+  "Home Lab Architecture"
 ]
