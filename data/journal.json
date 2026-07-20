@@ -70,5 +70,14 @@
     "NextGoals": "Implement operations tasks: automatic health monitoring, back up strategy, proxmox snapshots, disk usuage alerts, SMART mointoring, Automatic container updates (carfeully controlled) Then move on to Security with WireGuard VPN, Fail2Ban (if applicable) Internal only administration, HTTPS where appropriate and Proper documentation.",
     "Technologies": "DNS, Docker, Networking, Proxmox, Docker Compose, Adguard Home, NGINX Proxy Manager, Hommar, Jellyfin, Navidrome, Glances, Reverse Proxy, DNS Rewriting, HTTP Networking, Home Lab Architecture",
     "Hours": "6"
+  },
+  {
+    "Hours": "4",
+    "SessionNotes": "Verified Docker LXC storage utilization and confirmed backup size requirements. Confirmed the /media bind mount is excluded from Proxmox container backups. Successfully created the first full Proxmox backup of CT100 using Stop mode with ZSTD compression, producing a 3.24 GB compressed recovery archive. Verified the backup completed successfully and is visible within Proxmox for future restoration. Established the first Atlas v1.0 disaster recovery point prior to expanding the homelab infrastructure and reviewed the backup strategy and roadmap for upcoming deployments including Authentik, Uptime Kuma, Grafana, and network-wide AdGuard DNS.",
+    "Date": "2026-07-20",
+    "NextGoals": "Atlas reached its first stable recovery milestone. Successfully created and verified the initial Proxmox backup before deploying additional infrastructure. This establishes a known-good restore point, allowing future services such as Authentik, Uptime Kuma, and Grafana to be deployed with significantly reduced risk. Next is Authentik, Kuma and Grafana.",
+    "Technologies": "Backup & Disaster Recovery, Wireguard VPN, NGINX Proxy Manager, Adguard Home, Docker, Proxmox, Linux",
+    "Session": "OPS-0009",
+    "Difficulties": "Discovered that Proxmox LXC snapshots are not supported due to the /media bind mount configuration, requiring the use of Stop mode backups instead. Verified that standard Proxmox backups exclude the bind-mounted media storage while preserving the complete Docker environment and application configurations. No critical issues or failures were encountered during the backup process, and the backup completed successfully on the first attempt."
   }
 ]

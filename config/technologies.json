@@ -30,5 +30,7 @@
   "Reverse Proxy",
   "DNS Rewriting",
   "HTTP Networking",
-  "Home Lab Architecture"
+  "Home Lab Architecture",
+  "Wireguard VPN",
+  "Backup & Disaster Recovery"
 ]
