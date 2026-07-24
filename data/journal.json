@@ -97,5 +97,14 @@
     "SessionNotes": "Installed new Flint 2 Router, esyablished passthrough with gateway from ISP, DNS rewrites and proxies, established Adguard on entire network, removed docker for Adguard to be handled by router.",
     "NextGoals": "WireGuard transfer decision TBD",
     "Difficulties": "IP passthrough and IPV6 issues"
+  },
+  {
+    "Date": "2026-07-24",
+    "Technologies": "Tailscale, Networking, NGINX Proxy Manager, Adguard Home, DNS",
+    "NextGoals": "Investigate Caddy over Nginx for Https solutions and proxy. ",
+    "Session": "OPS-0012",
+    "SessionNotes": "Deployed Tailscale to replace wireguard for better connection with devices outside of local network, Resolved DNS conflicts, Adguard and Wireguard Containers removed in favor for Adguard and Tailscale to run on router workload for all connected devices over network. ",
+    "Hours": "6",
+    "Difficulties": "Configuring for Tailscale, Issues with Jellyfin playback and transcoding over network, issues with hardware acceleration, however those were eventually resolved with docker settings."
   }
 ]

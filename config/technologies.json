@@ -32,5 +32,6 @@
   "HTTP Networking",
   "Home Lab Architecture",
   "Wireguard VPN",
-  "Backup & Disaster Recovery"
+  "Backup & Disaster Recovery",
+  "Tailscale"
 ]
