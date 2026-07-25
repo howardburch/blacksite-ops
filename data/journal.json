@@ -106,5 +106,14 @@
     "SessionNotes": "Deployed Tailscale to replace wireguard for better connection with devices outside of local network, Resolved DNS conflicts, Adguard and Wireguard Containers removed in favor for Adguard and Tailscale to run on router workload for all connected devices over network. ",
     "Hours": "6",
     "Difficulties": "Configuring for Tailscale, Issues with Jellyfin playback and transcoding over network, issues with hardware acceleration, however those were eventually resolved with docker settings."
+  },
+  {
+    "Hours": "6",
+    "NextGoals": "Continued NGT Training. ",
+    "Technologies": "NGT Academy",
+    "Session": "OPS-0013",
+    "SessionNotes": "NGT Module Training for Networking",
+    "Date": "2026-07-24",
+    "Difficulties": "None"
   }
 ]
