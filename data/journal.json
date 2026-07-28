@@ -115,5 +115,14 @@
     "SessionNotes": "NGT Module Training for Networking",
     "Date": "2026-07-24",
     "Difficulties": "None"
+  },
+  {
+    "Date": "2026-07-28",
+    "SessionNotes": "Studying for IP Assignment and DHCP Through labwork",
+    "Technologies": "Networking, Cisco, DHCP, DNS Rewriting",
+    "Difficulties": "None",
+    "NextGoals": "VLANs",
+    "Session": "OPS-0014",
+    "Hours": "1"
   }
 ]
