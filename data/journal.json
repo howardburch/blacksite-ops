@@ -133,5 +133,14 @@
     "NextGoals": "Module 5",
     "Session": "OPS-0015",
     "Hours": "2"
+  },
+  {
+    "NextGoals": "Work toward certification within the next week. ",
+    "SessionNotes": "GitHub Fondations Cert Training Started,  Reasoning is for resume building but further Github learning without have to reply on the help command so much when working within GitHub. ",
+    "Difficulties": "None",
+    "Session": "OPS-0016",
+    "Date": "2026-07-28",
+    "Technologies": "Git, GitHub",
+    "Hours": "1"
   }
 ]
