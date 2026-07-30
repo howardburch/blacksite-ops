@@ -142,5 +142,14 @@
     "Date": "2026-07-28",
     "Technologies": "Git, GitHub",
     "Hours": "1"
+  },
+  {
+    "Session": "OPS-0017",
+    "Difficulties": "None",
+    "Hours": "2",
+    "Technologies": "NGT Academy",
+    "Date": "2026-07-30",
+    "SessionNotes": "VLANS deepdive, Spanning Tree Protocol, Root Bridge, Port Bonding/Mirroring, Mac Filtering and QoS ",
+    "NextGoals": "Routing Protocols / Static Vs Dynamic Routing and Core Routing Concepts"
   }
 ]
