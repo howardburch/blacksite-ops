@@ -151,5 +151,14 @@
     "Date": "2026-07-30",
     "SessionNotes": "VLANS deepdive, Spanning Tree Protocol, Root Bridge, Port Bonding/Mirroring, Mac Filtering and QoS ",
     "NextGoals": "Routing Protocols / Static Vs Dynamic Routing and Core Routing Concepts"
+  },
+  {
+    "Session": "OPS-0018",
+    "Difficulties": "Verifying where items in the assessment were lacking in packet tracer. Eventhough all objetives were completed.",
+    "Date": "2026-07-31",
+    "Technologies": "NGT Academy, Networking, Virtualization",
+    "NextGoals": "Finish Routing Module",
+    "SessionNotes": "Studied Routing protocols, core routing concepts and dynamic/static routing. Completed FSNA Networking Lab for grading",
+    "Hours": "6"
   }
 ]
