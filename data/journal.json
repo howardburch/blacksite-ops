@@ -160,5 +160,14 @@
     "NextGoals": "Finish Routing Module",
     "SessionNotes": "Studied Routing protocols, core routing concepts and dynamic/static routing. Completed FSNA Networking Lab for grading",
     "Hours": "6"
+  },
+  {
+    "NextGoals": "Wirless LANS UC VOIP",
+    "Difficulties": "None]",
+    "Technologies": "NGT Academy",
+    "Session": "OPS-0019",
+    "Date": "2026-08-06",
+    "Hours": "6",
+    "SessionNotes": "Studied Network Security, Attacks Threats and Vulnerabilities,  Netwotk Hardening."
   }
 ]
